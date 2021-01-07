@@ -1,5 +1,5 @@
 #include <iostream>
-
+/*
 int main()
 {
 	std::cout << "Hello, Sailor!" << std::endl;
@@ -8,3 +8,4 @@ int main()
 
 	return 1;
 }
+*/
