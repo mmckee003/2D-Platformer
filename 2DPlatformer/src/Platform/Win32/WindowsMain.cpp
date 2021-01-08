@@ -27,7 +27,7 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         } break;
         default:
         {
-            //OutputDebugStringA("default\n");
+            // OutputDebugStringA("default\n");
             result = DefWindowProc(hwnd, uMsg, wParam, lParam);
         }break;
     }
@@ -36,7 +36,6 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
 
 int create_window(HINSTANCE hInstance)
 {
-    const wchar_t CLASS_NAME[] = L"2DPlatformerWindowClass";
     WNDCLASSEX wc = {};
     wc.cbSize = sizeof(WNDCLASSEX);
     // TODO: check if style flags actually do anything
@@ -44,14 +43,14 @@ int create_window(HINSTANCE hInstance)
     wc.lpfnWndProc = WindowProc;
     wc.hInstance = hInstance;
     wc.hIcon = NULL;
-    wc.lpszClassName = CLASS_NAME;
+    wc.lpszClassName = L"2DPlatformerWindowClass";
     wc.hIconSm = NULL;
  
     if (RegisterClassEx(&wc))
     {
         HWND hwnd = CreateWindowEx(
             0,
-            CLASS_NAME,
+            L"2DPlatformerWindowClass",
             L"2D Platformer",
             WS_OVERLAPPEDWINDOW|WS_VISIBLE,
             CW_USEDEFAULT,
@@ -97,8 +96,8 @@ INT WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ PST
     // create debug console
     AllocConsole();
     AttachConsole(GetCurrentProcessId());
-    FILE* f1 = freopen("CONOUT", "w", stdout);
-    FILE* f2 = freopen("CONOUT", "w", stderr);
+    FILE* f1 = freopen("CON", "w", stdout);
+    FILE* f2 = freopen("CON", "w", stderr);
 
     create_window(hInstance);
 
