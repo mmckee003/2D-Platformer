@@ -11,8 +11,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\game.cpp" />
     <ClCompile Include="src\Platform\Win32\main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\game.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{978EF418-83F1-83BD-2C77-BC7318B94F40}</ProjectGuid>
@@ -49,6 +52,7 @@
     <IntDir>..\bin-int\Debug-windows-x86_64\2DPlatformer\</IntDir>
     <TargetName>2DPlatformer</TargetName>
     <TargetExt>.exe</TargetExt>
+    <IncludePath>$(VC_IncludePath);$(WindowsSDK_IncludePath);src/;</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
