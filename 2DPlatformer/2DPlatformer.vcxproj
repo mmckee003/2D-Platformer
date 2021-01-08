@@ -12,9 +12,12 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\game.cpp" />
-    <ClCompile Include="src\Platform\Win32\main.cpp" />
+    <ClCompile Include="src\Platform\Win32\WindowsInput.cpp" />
+    <ClCompile Include="src\Platform\Win32\WindowsMain.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\Core\Input.h" />
+    <ClInclude Include="src\Core\KeyCodes.h" />
     <ClInclude Include="src\game.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
