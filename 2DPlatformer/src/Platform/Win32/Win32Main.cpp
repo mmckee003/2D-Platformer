@@ -1,5 +1,4 @@
-#include <Windows.h>
-#include <wincon.h>
+#include "Win32Main.h"
 #include <iostream>
 
 #include "src/game.h"
@@ -16,10 +15,12 @@ LRESULT CALLBACK WindowProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam)
         case WM_DESTROY:
         {
             OutputDebugStringA("WM_DESTROY\n");
+            SHOULD_QUIT = true;
         } break;
         case WM_CLOSE:
         {
             OutputDebugStringA("WM_CLOSE\n");
+            SHOULD_QUIT = true;
         } break;
         case WM_ACTIVATEAPP:
         {
@@ -63,6 +64,7 @@ int create_window(HINSTANCE hInstance)
             0);
         if (hwnd)
         {
+            /*
             MSG message; 
             for (;;)
             {
@@ -77,6 +79,10 @@ int create_window(HINSTANCE hInstance)
                     break;
                 }
             }
+            */
+
+            return 1;
+
         }
         else
         {
