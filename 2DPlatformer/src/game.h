@@ -1,5 +1,5 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef GAME_H
+#define GAME_H
 
 // This probably shouldn't be a global
 extern bool SHOULD_QUIT;
